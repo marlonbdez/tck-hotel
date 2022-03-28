@@ -1,0 +1,32 @@
+/* Roboto y Roboto Slab */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700');
+
+/*
+  Roboto Slab:
+  400: regular
+  700: bold
+*/
+
+/*
+  Roboto:
+  400: regular
+  700: bold
+*/
+
+@mixin font-roboto-slab {
+  font-family: "Roboto Slab", arial, sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-roboto {
+  font-family: "Roboto", arial, sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-header-l {
+  @include font-roboto-slab;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 38px;
+  color: $color-primary-light;
+}
