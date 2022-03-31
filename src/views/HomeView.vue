@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+    <div class="cards-container">
+      <AppCard v-for="card in cards" :key="card.id" :option="card.id" :title="card.title" :services="card.services"  v-model="selectedCard" />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import json from '@/assets/json/data.json'
+import AppCard from '@/components/AppCard.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
-  }
+    AppCard
+  },
+  data: () => ({
+    cards: json,
+    selectedCard: null
+  })
 }
 </script>
+
+<style lang="scss" scoped>
+  .cards-container {
+    display: flex;
+    gap: 1rem;
+  }
+</style>
