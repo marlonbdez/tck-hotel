@@ -2,13 +2,14 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <div class="cards-container">
-      <AppCard v-for="card in cards" :key="card.id" :option="card.id" :title="card.title" :services="card.services"  v-model="selectedCard" />
+      <AppCard v-for="card in cards" :key="card.id" :option="card.id" :title="card.title" :services="card.services" v-model="selectedCard" />
     </div>
   </div>
 </template>
 
 <script>
 import json from '@/assets/json/data.json'
+import { mapGetters, mapActions } from 'vuex'
 import AppCard from '@/components/AppCard.vue'
 
 export default {
@@ -19,7 +20,26 @@ export default {
   data: () => ({
     cards: json,
     selectedCard: null
-  })
+  }),
+  computed: {
+    ...mapGetters(['getSelectedCard'])
+  },
+  watch: {
+    selectedCard (value) {
+      this.setSelectedCard(value)
+    }
+  },
+  methods: {
+    ...mapActions({
+      setSelectedCard: 'SET_SELECTED_CARD'
+    }),
+    setInitialData () {
+      this.selectedCard = this.getSelectedCard
+    }
+  },
+  mounted () {
+    this.setInitialData()
+  }
 }
 </script>
 
