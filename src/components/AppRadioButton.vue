@@ -1,5 +1,5 @@
 <template>
-  <div class="radio-wrapper" :class="getCSSClasses" @click="updateModelValue">
+  <div class="radio-wrapper" :class="classObject" @click="updateModelValue">
     <input
       type="radio"
       :id="id"
@@ -50,7 +50,7 @@ export default {
     state () {
       return this.modelValue === this.value
     },
-    getCSSClasses () {
+    classObject () {
       return {
         'radio-wrapper--checked': this.state
       }

@@ -1,6 +1,6 @@
 
 <template>
-  <article class="card">
+  <article class="card" :class="classObject">
     <h3 class="card__title">{{ title }}</h3>
     <ul class="card__services">
       <li v-for="(service, i) in services" :key="i">{{ service }}</li>
@@ -40,6 +40,13 @@ export default {
       selectedRadio: this.value
     }
   },
+  computed: {
+    classObject () {
+      return {
+        'card--checked': this.selectedRadio === this.option
+      }
+    }
+  },
   watch: {
     selectedRadio (value) {
       this.$emit('input', value)
@@ -57,5 +64,9 @@ export default {
   border: 1px solid #C9E3F9;
   border-radius: 2px;
   padding: 1rem;
+
+  &--checked {
+    border: 1px solid #326C96;
+  }
 }
 </style>
