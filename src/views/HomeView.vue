@@ -30,9 +30,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions({
-      setSelectedCard: 'SET_SELECTED_CARD'
-    }),
+    ...mapActions(['setSelectedCard']),
     setInitialData () {
       this.selectedCard = this.getSelectedCard
     }

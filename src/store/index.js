@@ -18,7 +18,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    SET_SELECTED_CARD ({ commit }, value) {
+    setSelectedCard ({ commit }, value) {
       commit('SET_SELECTED_CARD', value)
     }
   },
