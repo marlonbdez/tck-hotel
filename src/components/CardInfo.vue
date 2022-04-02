@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'CardService',
+  name: 'CardInfo',
   props: {
     option: {
       type: String,
