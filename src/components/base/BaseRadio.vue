@@ -1,14 +1,14 @@
 <template>
-  <div class="radio-wrapper" :class="classObject" @click="updateModelValue">
+  <div class="radio" :class="classObject" @click="updateModelValue">
     <input
       type="radio"
       :id="id"
       :name="name"
       :value="value"
       :checked="state"
-      class="radio-wrapper__input"
+      class="radio__input"
     />
-    <label class="radio-wrapper__label" :for="id">
+    <label class="radio__label" :for="id">
       {{ label }}
     </label>
   </div>
@@ -17,7 +17,7 @@
 <script>
 
 export default {
-  name: 'AppRadioButton',
+  name: 'BaseRadio',
   model: {
     prop: 'modelValue',
     event: 'input'
@@ -52,7 +52,7 @@ export default {
     },
     classObject () {
       return {
-        'radio-wrapper--checked': this.state
+        'radio--checked': this.state
       }
     }
   },
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.radio-wrapper {
+.radio {
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -112,7 +112,7 @@ export default {
   &--checked {
     border: 1px solid #326C96;
 
-    .radio-wrapper__input::before {
+    .radio__input::before {
         content: "";
         position: absolute;
         border-radius: 50%;

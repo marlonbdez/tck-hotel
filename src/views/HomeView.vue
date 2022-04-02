@@ -1,8 +1,7 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <div class="cards-container">
-      <AppCard v-for="card in cards" :key="card.id" :option="card.id" :title="card.title" :services="card.services" v-model="selectedCard" />
+      <CardInfo v-for="card in cards" :key="card.id" :option="card.id" :title="card.title" :services="card.services" v-model="selectedCard" />
     </div>
   </div>
 </template>
@@ -10,12 +9,12 @@
 <script>
 import json from '@/assets/json/data.json'
 import { mapGetters, mapActions } from 'vuex'
-import AppCard from '@/components/AppCard.vue'
+import CardInfo from '@/components/CardInfo.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    AppCard
+    CardInfo
   },
   data: () => ({
     cards: json,

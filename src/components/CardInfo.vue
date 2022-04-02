@@ -1,22 +1,17 @@
 
 <template>
-  <article class="card" :class="classObject">
-    <h3 class="card__title">{{ title }}</h3>
-    <ul class="card__services">
+  <article class="card-info" :class="classObject">
+    <h3 class="card-info__title">{{ title }}</h3>
+    <ul class="card-info__services">
       <li v-for="(service, i) in services" :key="i">{{ service }}</li>
     </ul>
-    <AppRadioButton name="card-options" label="Elegir régimen" :value="option" v-model="selectedRadio"/>
+    <BaseRadio name="cards" label="Elegir régimen" :value="option" v-model="selectedRadio"/>
   </article>
 </template>
 
 <script>
-import AppRadioButton from '@/components/AppRadioButton.vue'
-
 export default {
-  name: 'AppCard',
-  components: {
-    AppRadioButton
-  },
+  name: 'CardService',
   props: {
     option: {
       type: String,
@@ -43,7 +38,7 @@ export default {
   computed: {
     classObject () {
       return {
-        'card--checked': this.selectedRadio === this.option
+        'card-info--checked': this.selectedRadio === this.option
       }
     }
   },
@@ -59,7 +54,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
+.card-info {
   background: #FFFFFF;
   border: 1px solid #C9E3F9;
   border-radius: 2px;
