@@ -15,3 +15,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+#app {
+  @include font-roboto-regular;
+}
+</style>
