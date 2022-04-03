@@ -1,14 +1,40 @@
-$screen-tablet-min: 768px;
-$screen-desktop-min: 1024px;
+/*
+  Breakpoints
+*/
 
-@mixin tablet {
-  @media (min-width: #{$screen-tablet-min}) {
+$screen-tablet-portrait-min: 48rem;
+$screen-tablet-landscape-min: 64rem;
+
+@mixin tablet-portrait {
+  @media (min-width: #{$screen-tablet-portrait-min}) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media (min-width: #{$screen-desktop-min}) {
+@mixin tablet-landscape {
+  @media (min-width: #{$screen-tablet-landscape-min}) {
     @content;
   }
 }
+
+
+/*
+  Container
+*/
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: .75em;
+  padding-right: .75em;
+
+  @include tablet-portrait {
+    max-width: $screen-tablet-portrait-min;
+  }
+
+  @include tablet-landscape() {
+    max-width: $screen-tablet-landscape-min;
+  }
+}
+
