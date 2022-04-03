@@ -1,5 +1,20 @@
-/* Roboto y Roboto Slab */
+/*
+  Roboto y Roboto Slab
+*/
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700');
+
+
+/*
+  Font sizes
+*/
+
+$font-size-x-large: 1.5rem;
+$font-size-large: 1.125rem;
+$font-size-regular: 1rem;
+$font-size-small: .9375rem;
+$font-size-x-small: .8375rem;
+$font-size-xx-small: .75rem;
+
 
 /*
   Roboto Slab:
@@ -7,26 +22,99 @@
   700: bold
 */
 
+@mixin font-roboto-slab-regular {
+  font-family: "Roboto Slab", arial, sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-roboto-slab-bold {
+  font-family: "Roboto Slab", arial, sans-serif;
+  font-weight: 700;
+}
+
+@mixin font-roboto-slab-bold-x-large {
+  @include font-roboto-slab-bold;
+  font-size: $font-size-x-large;
+  line-height: 1.583333333333333em;
+  color: $color-primary-light;
+}
+
+@mixin font-roboto-slab-regular-x-large {
+  @include font-roboto-slab-regular;
+  font-size: $font-size-x-large;
+  line-height: 1.25em;
+  color: $color-primary-dark;
+}
+
+@mixin font-roboto-slab-bold-large {
+  @include font-roboto-slab-bold;
+  font-size: $font-size-large;
+  line-height: 1.333333333333333em;
+  color: $color-primary-dark;
+}
+
+@mixin font-roboto-slab-regular-medium {
+  @include font-roboto-slab-regular;
+  font-size: $font-size-regular;
+  line-height: .875em;
+  color: $color-primary-dark;
+}
+
+
 /*
   Roboto:
   400: regular
   700: bold
 */
 
-@mixin font-roboto-slab {
-  font-family: "Roboto Slab", arial, sans-serif;
-  font-weight: 400;
-}
-
-@mixin font-roboto {
+@mixin font-roboto-regular {
   font-family: "Roboto", arial, sans-serif;
   font-weight: 400;
 }
 
-@mixin font-header-l {
-  @include font-roboto-slab;
+@mixin font-roboto-bold {
+  font-family: "Roboto", arial, sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 38px;
+}
+
+@mixin font-roboto-regular-medium {
+  @include font-roboto-regular;
+  font-size: $font-size-regular;
+  line-height: 1em;
+  color: $color-primary-dark;
+}
+
+@mixin font-roboto-bold-medium {
+  @include font-roboto-bold;
+  font-size: $font-size-regular;
+  line-height: 1em;
+  color: $color-primary-main;
+}
+
+@mixin font-roboto-regular-small {
+  @include font-roboto-regular;
+  font-size: $font-size-small;
+  line-height: 1.666666666666667em;
+  color: $color-primary-dark;
+}
+
+@mixin font-roboto-bold-x-small {
+  @include font-roboto-bold;
+  font-size: $font-size-x-small;
+  line-height: 1.357142857142857em;
   color: $color-primary-light;
+}
+
+@mixin font-roboto-regular-x-small {
+  @include font-roboto-regular;
+  font-size: $font-size-x-small;
+  line-height: 1.428571428571429em;
+  color: $color-primary-dark;
+}
+
+@mixin font-roboto-regular-xx-small {
+  @include font-roboto-regular;
+  font-size: $font-size-xx-small;
+  line-height: 1.166666666666667em;
+  color: $color-primary-dark;
 }
