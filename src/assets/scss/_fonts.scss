@@ -43,7 +43,7 @@ $font-size-xx-small: .75rem;
   @include font-roboto-slab-regular;
   font-size: $font-size-x-large;
   line-height: 1.25em;
-  color: $color-primary-dark;
+  color: $color-primary-main;
 }
 
 @mixin font-roboto-slab-bold-large {

@@ -4,6 +4,7 @@
 
 $screen-tablet-portrait-min: 48rem;
 $screen-tablet-landscape-min: 64rem;
+$screen-desktop-min: 75rem;
 
 @mixin tablet-portrait {
   @media (min-width: #{$screen-tablet-portrait-min}) {
@@ -13,6 +14,12 @@ $screen-tablet-landscape-min: 64rem;
 
 @mixin tablet-landscape {
   @media (min-width: #{$screen-tablet-landscape-min}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$screen-desktop-min}) {
     @content;
   }
 }
@@ -33,8 +40,12 @@ $screen-tablet-landscape-min: 64rem;
     max-width: $screen-tablet-portrait-min;
   }
 
-  @include tablet-landscape() {
+  @include tablet-landscape {
     max-width: $screen-tablet-landscape-min;
+  }
+
+  @include desktop {
+    max-width: $screen-desktop-min;
   }
 }
 
