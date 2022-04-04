@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <h1 class="home__title">HOTEL<StarRating :rating="4" /> <strong>Mieres del Camín Apartamentos</strong> </h1>
+    <div class="home__header">
+      <h1 class="home__title">HOTEL <strong>Mieres del Camín Apartamentos</strong></h1>
+      <StarRating :rating="4" />
+    </div>
     <div class="home__cards">
       <CardInfo v-for="card in cards" :key="card.id" :option="card.id" :title="card.title" :services="card.services" v-model="selectedCard" />
     </div>
@@ -45,12 +48,28 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
   &__title {
     @include font-roboto-slab-regular-x-large;
     text-align: center;
 
     & strong {
       display: block;
+
+      @include desktop {
+       display: inline-block;
+       margin-right: 1.5rem;
+      }
     }
   }
 
@@ -62,11 +81,8 @@ export default {
     margin-top: 2.5rem;
 
     @include tablet-portrait {
-      grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-    }
-
-    @include desktop {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-auto-rows: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(12.5em, 1fr));
     }
   }
 

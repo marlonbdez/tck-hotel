@@ -43,12 +43,13 @@ export default {
 <style scoped lang="scss">
 .product-list-card {
   position: relative;
-  background: #FFFFFF;
-  border: 1px solid #C9E3F9;
-  border-radius: 2px;
+  background: $color-white;
+  border: .0625rem solid $color-extra-2;
+  border-radius: .125rem;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
+  grid-auto-rows: 1fr;
 
   &__image {
     flex-basis: 250px;

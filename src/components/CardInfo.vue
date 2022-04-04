@@ -1,13 +1,13 @@
 
 <template>
   <article class="card-info" :class="classObject">
-    <div>
+    <div class="card-info__desc">
       <h3 class="card-info__title">{{ title }}</h3>
       <ul class="card-info__services">
         <li v-for="(service, i) in services" :key="i">{{ service }}</li>
       </ul>
     </div>
-    <BaseRadio name="cards" label="Elegir régimen" :value="option" v-model="selectedRadio"/>
+    <BaseRadio class="card-info__radio" name="cards" label="Elegir régimen" :value="option" v-model="selectedRadio"/>
   </article>
 </template>
 
@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-info {
-  background: #FFFFFF;
+  background: $color-white;
   border: .0625rem solid $color-primary-light;
   border-radius: .125em;
   padding: 1.625rem 1rem;
@@ -67,7 +67,7 @@ export default {
   justify-content: space-between;
 
   @include tablet-portrait {
-    min-height: 20rem;
+    height: 100%;
   }
 
   &--checked {
@@ -94,7 +94,7 @@ export default {
   }
 
   &__services {
-    margin: .5em;
+    margin: .5em .5em 2.625em;
     list-style: none;
 
     li {
@@ -109,6 +109,10 @@ export default {
         margin-left: -1em;
       }
     }
+  }
+
+  &__radio {
+    margin-top: 1rem;
   }
 
 }
