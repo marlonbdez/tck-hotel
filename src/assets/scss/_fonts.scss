@@ -50,7 +50,7 @@ $font-size-xx-small: .75rem;
   @include font-roboto-slab-bold;
   font-size: $font-size-large;
   line-height: 1.333333333333333em;
-  color: $color-primary-dark;
+  color: $color-primary-main;
 }
 
 @mixin font-roboto-slab-regular-medium {
@@ -109,7 +109,7 @@ $font-size-xx-small: .75rem;
   @include font-roboto-regular;
   font-size: $font-size-x-small;
   line-height: 1.428571428571429em;
-  color: $color-primary-dark;
+  color: $color-gray;
 }
 
 @mixin font-roboto-regular-xx-small {

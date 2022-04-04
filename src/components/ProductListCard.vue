@@ -49,12 +49,17 @@ export default {
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-  grid-auto-rows: 1fr;
 
   &__image {
-    flex-basis: 250px;
+    width: 100%;
+    text-align: center;
+
+    @include tablet-portrait {
+      flex-basis: 13rem;
+    }
+
     img {
-      max-height: 153px;
+      max-height: 9.5625rem;
     }
   }
 
@@ -63,45 +68,46 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 1rem;
+    text-align: left;
+
+    @include tablet-landscape {
+      margin-top: 0;
+      max-width: 65%;
+    }
   }
 
   &__title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-    color: #033970;
-    text-align: left;
+    @include font-roboto-slab-bold-large;
   }
 
   &__description {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: left;
+    @include font-roboto-regular-x-small;
   }
 
   &__footer {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
-    color: #3B95ED;
-    text-align: left;
+    @include font-roboto-bold-x-small;
+    margin-top: 0.5rem;
   }
 
   &__info {
+    @include font-roboto-slab-bold-large;
     position: absolute;
     right: 0;
+    text-align: center;
+    min-width: 5.375rem;
+    padding: .25rem 0;
 
     &--normal {
-      background-color: #FFEF63;
+      background-color: $color-info;
     }
 
     &--warning {
-      background-color: #FFAB48;
+      background-color: $color-warning;
     }
 
     &--alert {
-      background-color: #DB171D;
+      background-color: $color-alert;
     }
   }
 }

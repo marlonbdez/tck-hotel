@@ -2,7 +2,7 @@
   <div class="products">
     <h1 class="products__title">Bebidas</h1>
     <ProductList title="Cervezas" :items="items" />
-    <span v-if="loading">Cargando</span>
+    <span v-if="loading">Cargando...</span>
     <span v-if="error">No ha sido posible obtener la información en este momento. </span>
   </div>
 </template>
@@ -40,11 +40,12 @@ export default {
 
 <style lang="scss" scoped>
 .products__title {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 38px;
-  color: #4BA7EE;
-  text-align: left;
-  padding: 20px;
+  @include font-roboto-slab-bold-x-large;
+  text-align: center;
+  padding: .833333333333333em;
+
+  @include tablet-portrait {
+    text-align: left;
+  }
 }
 </style>

@@ -28,20 +28,23 @@ export default {
 
 <style lang="scss" scoped>
 .product-list {
-  background: #FFFFFF;
-  border: 1px solid #DEE1E8;
-  padding: 20px;
+  background: $color-white;
+  border: .0625rem solid $color-extra-4;
+  padding: 1.25rem;
 
   &__title {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 38px;
-    color: #4BA7EE;
-    text-align: left;
+    @include font-roboto-slab-bold-x-large;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    @include tablet-portrait {
+      text-align: left;
+    }
   }
+
   &__container {
     display: grid;
-    gap: 32px;
+    gap: 2rem;
   }
 }
 </style>
