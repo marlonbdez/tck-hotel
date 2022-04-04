@@ -2,8 +2,8 @@
   <div class="products">
     <h1 class="products__title">Bebidas</h1>
     <ProductList title="Cervezas" :items="items" />
-    <span v-if="loading">Cargando...</span>
-    <span v-if="error">No ha sido posible obtener la información en este momento. </span>
+    <span v-if="loading" class="products__txt">Cargando...</span>
+    <span v-if="error" class="products__txt">No ha sido posible obtener la información en este momento. </span>
   </div>
 </template>
 
@@ -47,5 +47,11 @@ export default {
   @include tablet-portrait {
     text-align: left;
   }
+}
+
+.products__txt {
+  @include font-roboto-slab-bold-large;
+  text-align: left;
+  padding: .833333333333333em;
 }
 </style>

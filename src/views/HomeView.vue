@@ -54,6 +54,7 @@ export default {
   @include tablet-portrait {
     grid-auto-rows: 1fr;
     grid-template-columns: repeat(auto-fit, minmax(12.5em, 1fr));
+    padding: 0 1.25rem;
   }
 }
 </style>
