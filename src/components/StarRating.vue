@@ -1,5 +1,5 @@
 <template>
-  <span class="star-rating">
+  <span class="star-rating" role="img" :aria-label="ariaLabel">
     <span v-for="(item, i) in rating" :key="i" class="star-rating__star"></span>
   </span>
 </template>
@@ -10,6 +10,11 @@ export default {
     rating: {
       type: Number,
       required: true
+    }
+  },
+  computed: {
+    ariaLabel () {
+      return `${this.rating} estrellas`
     }
   }
 }

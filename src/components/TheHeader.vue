@@ -10,18 +10,36 @@
 <style lang="scss" scoped>
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  padding: 0 1rem;
+  background-color: $color-white;
+  filter: drop-shadow(0 .0625rem .125rem $color-extra-8);
+
+  @include tablet-portrait {
+    justify-content: flex-end;
+  }
 }
 
 .nav {
-  flex-wrap: wrap;
-  padding: 30px;
+  position: relative;
 
-  .__link {
-    display: block;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    color: #2c3e50;
+  &__link {
+    @include font-roboto-slab-regular;
+    display: inline-block;
+    text-decoration: none;
+    color: $color-primary-light;
+    padding: .8125rem 2.5rem;
+
+    &:hover,
+    &:focus {
+      color: $color-primary-main;
+    }
+
+    &:active,
+    &--active {
+      color: $color-primary-main;
+      border-bottom: .0625rem solid $color-primary-main;
+    }
   }
 }
 </style>

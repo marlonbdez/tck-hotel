@@ -114,6 +114,5 @@ export default {
   &__radio {
     margin-top: 1rem;
   }
-
 }
 </style>
