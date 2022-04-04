@@ -73,44 +73,44 @@ export default {
   margin: 0;
   padding: 0;
   position: relative;
-  background-color: #dee1e8;
+  background-color: $color-extra-4;
 
   &__input[type="radio"] {
     background-color: transparent;
     border: none;
     border-radius: 50%;
     box-sizing: border-box;
-    height: 24px;
-    margin: 0 12px;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 .75rem;
     outline: none;
     padding: 0;
     position: relative;
-    width: 24px;
+    cursor: pointer;
     -webkit-appearance: none;
 
     &::after {
-      background-color: #fff;
-      border: 1px solid #8b9199;
+      background-color: $color-white;
+      border: .0625rem solid $color-extra-5;
       border-radius: 50%;
       content: "";
-      height: 24px;
+      height: 1rem;
+      width: 1rem;
       display: block;
-      left: 0;
       position: absolute;
+      left: 0;
       top: 0;
-      width: 24px;
     }
   }
 
   &__label {
-    color: #616469;
+    color: $color-gray;
+    margin: .75rem .25rem;
     cursor: pointer;
-    line-height: 1.68;
-    margin: 0;
   }
 
   &--checked {
-    border: 1px solid #326C96;
+    border: .0625rem solid $color-extra-6;
 
     .radio__input::before {
         content: "";
@@ -118,13 +118,16 @@ export default {
         border-radius: 50%;
         display: block;
         border: 0;
-        width: 18px;
-        height: 18px;
-        top: 3px;
-        left: 3px;
-        background-color: gray;
+        width: 0.625rem;
+        height: 0.625rem;
+        top: 0.25rem;
+        left: 0.25rem;
+        background-color: $color-extra-7;
         z-index: 1;
       }
+    .radio__input::after {
+      border: 0.0625rem solid $color-extra-7;
+    }
   }
 }
 
