@@ -1,8 +1,8 @@
 <template>
   <header class="header">
     <nav class="nav">
-      <router-link class="nav__link"  exact-active-class="nav__link--active" to="/">Tab 1</router-link>
-      <router-link class="nav__link"  exact-active-class="nav__link--active" to="products">Tab 3</router-link>
+      <router-link class="nav__link" exact-active-class="nav__link--active" to="/">Tab 1</router-link>
+      <router-link class="nav__link" exact-active-class="nav__link--active" to="products">Tab 3</router-link>
     </nav>
   </header>
 </template>
