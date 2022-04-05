@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import ProductListCard from '@/components/ProductListCard.vue'
+
 const item = {
   name: 'Lorem Ipsum',
   description: 'Veritatis tempore nam ea, earum quos accusamus consectetur quae quidem exercitationem.',

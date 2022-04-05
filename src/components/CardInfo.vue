@@ -12,8 +12,12 @@
 </template>
 
 <script>
+import BaseRadio from '@/components/base/BaseRadio.vue'
 export default {
   name: 'CardInfo',
+  components: {
+    BaseRadio
+  },
   props: {
     option: {
       type: String,

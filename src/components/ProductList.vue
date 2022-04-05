@@ -10,6 +10,7 @@
 <script>
 import ProductListCard from '@/components/ProductListCard.vue'
 export default {
+  name: 'ProductList',
   components: {
     ProductListCard
   },
